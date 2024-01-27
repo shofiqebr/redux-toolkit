@@ -3,6 +3,11 @@ import counterReducer from '../features/counter/counter-slice';
 import counterSlice from "../features/counter/counter-slice";
 
 export const store = configureStore({
-    reducer: { counterReducer},
+    reducer: {
+       counter: counterReducer,
+    },
     
-})
+});
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
